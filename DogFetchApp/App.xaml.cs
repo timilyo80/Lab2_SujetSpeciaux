@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using WPFLocalizeExtension.Engine;
+using System.Globalization;
 
 namespace DogFetchApp
 {
@@ -13,5 +16,10 @@ namespace DogFetchApp
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            var lang = DogFetchApp.Properties.Settings.Default.Language;
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(lang);
+        }
     }
 }

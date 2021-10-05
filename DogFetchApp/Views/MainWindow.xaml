@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DogFetchApp"
+        xmlns:p="clr-namespace:DogFetchApp.Properties"
         mc:Ignorable="d"
         Title="Dog picture fetcher" Height="450" Width="800">
     <Window.Resources>
@@ -61,7 +62,7 @@
                 <ComboBoxItem Content="5"/>
                 <ComboBoxItem Content="10"/>
             </ComboBox>
-            <Button Grid.Row="2" Grid.Column="1" Content="Fetch!" Width="150"/>
+            <Button Grid.Row="2" Grid.Column="1" Content="{x:Static p:Resources.fetch}"  Width="150"/>
             <Grid Grid.Row="3" Grid.ColumnSpan="2" Margin="20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
@@ -84,8 +85,8 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                    <Button Content="Previous" Margin="10"/>
-                    <Button Content="Next" Margin="10"/>
+                    <Button Content="{x:Static p:Resources.previous}" Margin="10"/>
+                    <Button Content="{x:Static p:Resources.next}" Margin="10"/>
                 </StackPanel>
             </Grid>
         </Grid>
