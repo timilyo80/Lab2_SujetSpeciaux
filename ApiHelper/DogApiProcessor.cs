@@ -23,6 +23,7 @@ namespace ApiHelper
         public static async Task<DogModel> GetImageUrl(string breed)
         {
             string url;
+            //url = $"https://dog.ceo/api/breed/{breed}/images/random";
             url = $"https://dog.ceo/api/breeds/image/random";
 
             using (HttpResponseMessage response = await

@@ -20,7 +20,7 @@
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Réglage">
+            <MenuItem Header="{x:Static p:Resources.setting}">
                 <MenuItem Header="Langues">
                     <MenuItem Header="Français" Click="MenuItem_Click"/>
                     <MenuItem Header="English" Click="MenuItem_Click_1"/>
@@ -47,15 +47,14 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Column="0" Grid.Row="0" Text="Breed : "/>
-            <ComboBox Grid.Column="1" Grid.Row="0">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static p:Resources.breed}"/>
+            <ComboBox Name="cmbBreed" Grid.Column="1" Grid.Row="0">
 
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
+                <ComboBoxItem Content="Akita" IsSelected="True"/>
+                <ComboBoxItem Content="African"/>
+
             </ComboBox>
-            <TextBlock Grid.Row="1" Text="Nombre de photos :"/>
+            <TextBlock Grid.Row="1" Text="{x:Static p:Resources.nPicture}"/>
             <ComboBox Grid.Row="1" Grid.Column="1">
                 <ComboBoxItem Content="1"/>
                 <ComboBoxItem Content="3"/>

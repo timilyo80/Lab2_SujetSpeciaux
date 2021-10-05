@@ -9,9 +9,9 @@ namespace DogFetchApp.ViewModels
 {
     class MainViewModel : BaseViewModel
     {
-        public async Task<DogModel> LoadImage()
+        public async Task<DogModel> LoadImage(string Breed)
         {
-            var dog = await DogApiProcessor.GetImageUrl("test");
+            var dog = await DogApiProcessor.GetImageUrl(Breed);
 
             return dog;
         }

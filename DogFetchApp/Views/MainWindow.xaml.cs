@@ -3,6 +3,7 @@ using DogFetchApp.ViewModels;
 using System;
 using System.Net.Cache;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 namespace DogFetchApp
@@ -28,11 +29,15 @@ namespace DogFetchApp
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            DogModel dog = await currentViewmodel.LoadImage();
+            string test;
+            test = ((ComboBoxItem)cmbBreed.SelectedItem).Content.ToString();
 
-            var uriSource = new Uri(dog.message, UriKind.Absolute);
-            testIMG.Source = new BitmapImage(uriSource,
-                new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable));
+                DogModel dog = await currentViewmodel.LoadImage(test);
+
+
+                var uriSource = new Uri(dog.message, UriKind.Absolute);
+                testIMG.Source = new BitmapImage(uriSource,
+                    new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable));
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
