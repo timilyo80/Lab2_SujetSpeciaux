@@ -1,5 +1,9 @@
-﻿using DogFetchApp.ViewModels;
+﻿using ApiHelper;
+using DogFetchApp.ViewModels;
+using System;
+using System.Net.Cache;
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace DogFetchApp
 {
@@ -20,9 +24,15 @@ namespace DogFetchApp
             DataContext = currentViewmodel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public object Urikind { get; private set; }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            DogModel dog = await currentViewmodel.LoadImage();
+
+            var uriSource = new Uri(dog.message, UriKind.Absolute);
+            testIMG.Source = new BitmapImage(uriSource,
+                new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable));
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

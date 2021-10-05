@@ -38,7 +38,7 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -51,7 +51,7 @@
             <ComboBox Grid.Column="1" Grid.Row="0">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        
+
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
@@ -89,6 +89,7 @@
                     <Button Content="{x:Static p:Resources.next}" Margin="10"/>
                 </StackPanel>
             </Grid>
+            <Image x:Name="testIMG" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="87,0,0,0" Grid.Row="4" VerticalAlignment="Center" Width="100"/>
         </Grid>
     </DockPanel>
 </Window>

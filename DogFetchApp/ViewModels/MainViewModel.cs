@@ -1,12 +1,21 @@
-﻿using System;
+﻿using ApiHelper;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace DogFetchApp.ViewModels
 {
     class MainViewModel : BaseViewModel
     {
+        public async Task<DogModel> LoadImage()
+        {
+            var dog = await DogApiProcessor.GetImageUrl("test");
+
+            return dog;
+        }
+
         public void ChangeLanguage(string param)
         {
 

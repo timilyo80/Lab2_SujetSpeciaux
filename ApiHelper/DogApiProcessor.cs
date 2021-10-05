@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace ApiHelper
@@ -18,11 +20,24 @@ namespace ApiHelper
             return new List<string>();
         }
 
-        public static async Task<string> GetImageUrl(string breed)
+        public static async Task<DogModel> GetImageUrl(string breed)
         {
-            /// TODO : GetImageUrl()
-            /// TODO : Compléter le modèle manquant
-            return string.Empty;
+            string url;
+            url = $"https://dog.ceo/api/breeds/image/random";
+
+            using (HttpResponseMessage response = await
+            ApiHelper.ApiClient.GetAsync(url))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    DogModel dog = await response.Content.ReadAsAsync<DogModel>();
+                    return dog;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
         }
     }
 }
