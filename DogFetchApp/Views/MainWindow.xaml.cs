@@ -19,5 +19,20 @@ namespace DogFetchApp
 
             DataContext = currentViewmodel;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            currentViewmodel.ChangeLanguage("fr");
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            currentViewmodel.ChangeLanguage("");
+        }
     }
 }

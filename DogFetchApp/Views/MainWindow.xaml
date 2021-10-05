@@ -22,8 +22,8 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Réglage">
                 <MenuItem Header="Langues">
-                    <MenuItem Header="Français"/>
-                    <MenuItem Header="English"/>
+                    <MenuItem Header="Français" Click="MenuItem_Click"/>
+                    <MenuItem Header="English" Click="MenuItem_Click_1"/>
                 </MenuItem>
             </MenuItem>
         </Menu>
@@ -62,7 +62,7 @@
                 <ComboBoxItem Content="5"/>
                 <ComboBoxItem Content="10"/>
             </ComboBox>
-            <Button Grid.Row="2" Grid.Column="1" Content="{x:Static p:Resources.fetch}"  Width="150"/>
+            <Button Grid.Row="2" Grid.Column="1" Content="{x:Static p:Resources.fetch}"  Width="150" Click="Button_Click"/>
             <Grid Grid.Row="3" Grid.ColumnSpan="2" Margin="20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>

@@ -18,6 +18,7 @@ namespace DogFetchApp
     {
         public App()
         {
+
             var lang = DogFetchApp.Properties.Settings.Default.Language;
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(lang);
         }
